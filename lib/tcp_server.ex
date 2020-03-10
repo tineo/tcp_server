@@ -24,7 +24,7 @@ defmodule TcpServer do
 
 
   def start_link() do
-    ip = Application.get_env :tcp_server, :ip, {127,0,0,1}
+    ip = Application.get_env :tcp_server, :ip, {0,0,0,0}
     port = Application.get_env :tcp_server, :port, 6969
 
     GenServer.start_link(__MODULE__,[ip,port],[])
